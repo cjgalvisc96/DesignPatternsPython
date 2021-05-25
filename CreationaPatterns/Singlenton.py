@@ -1,3 +1,8 @@
+"""
+This design pattern restricts the instantiation of a class to a single object.
+"""
+
+
 class PersonSingleton:
     __instance = None
 

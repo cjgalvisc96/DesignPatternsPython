@@ -1,12 +1,6 @@
 class PersonSingleton:
     __instance = None
 
-    @staticmethod
-    def get_instance():
-        if PersonSingleton.__instance is None:
-            PersonSingleton("Default Name", 0)
-        return PersonSingleton.__instance
-
     def __init__(self, name, age):
         if PersonSingleton.__instance is not None:
             raise Exception("Singleton cannot be instantiated more than once!")
@@ -14,6 +8,12 @@ class PersonSingleton:
         self.name = name
         self.age = age
         PersonSingleton.__instance = self
+
+    @staticmethod
+    def get_instance():
+        if PersonSingleton.__instance is None:
+            PersonSingleton("Default Name", 0)
+        return PersonSingleton.__instance
 
 
 if __name__ == '__main__':

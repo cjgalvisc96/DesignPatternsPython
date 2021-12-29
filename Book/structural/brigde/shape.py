@@ -1,24 +1,24 @@
 from abc import ABC, abstractmethod
 
 
-class Color(ABC):
+class ColorInterface(ABC):
     @abstractmethod
     def get_color(self):
         pass
 
 
-class Red(Color):
+class Red(ColorInterface):
     def get_color(self):
         print("Color Red")
 
 
-class Blue(Color):
+class Blue(ColorInterface):
     def get_color(self):
         print("Color Blue")
 
 
 class Shape(ABC):
-    def __init__(self, color: Color) -> None:
+    def __init__(self, color: ColorInterface) -> None:
         self.color = color
 
     @abstractmethod

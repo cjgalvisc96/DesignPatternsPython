@@ -46,7 +46,7 @@ class ParentDepartment(IDepartment):
         print(f"Total number of employees: {self.employees}")
 
 
-if __name__ == "__main__":
+if __name__ == "__name__":
     department_one = Accounting(employees=200)
     department_two = Development(employees=170)
     parent_department = ParentDepartment(employees=30)

@@ -26,7 +26,9 @@ class Teacher(IPerson):
 
 class PersonFactory:
     @staticmethod
-    def build_person(*, person_type: str) -> Union[Student, Teacher, Exception]:
+    def build_person(
+        *, person_type: str
+    ) -> Union[Student, Teacher, Exception]:
         if person_type == "student":
             return Student()
         if person_type == "teacher":

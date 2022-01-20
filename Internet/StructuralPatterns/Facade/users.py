@@ -7,6 +7,7 @@ from reports import Reports
 
 class Users:
     """A Singleton Dictionary of Users"""
+
     _users: Dict[str, Dict[str, str]] = {}
 
     def __new__(cls):
@@ -24,8 +25,7 @@ class Users:
             # create a wallet for the new user
             Wallets().create_wallet(user_id)
             # give the user a sign up bonus
-            Reports.log_event(
-                f"Give new user `{user_id}` sign up bonus of 10")
+            Reports.log_event(f"Give new user `{user_id}` sign up bonus of 10")
             Wallets().adjust_balance(user_id, Decimal(10))
             return user_id
         return ""

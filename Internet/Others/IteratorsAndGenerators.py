@@ -8,7 +8,7 @@ def test_iterator() -> str:
         print("Finish list iterator")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Iterator
     test_iterator()
 

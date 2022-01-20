@@ -11,13 +11,13 @@ class TableFactory:
     def get_table(table):
         """A static method to get a table"""
         try:
-            if table == 'BigTable':
+            if table == "BigTable":
                 return BigTable()
-            if table == 'MediumTable':
+            if table == "MediumTable":
                 return MediumTable()
-            if table == 'SmallTable':
+            if table == "SmallTable":
                 return SmallTable()
-            raise Exception('Table Not Found')
+            raise Exception("Table Not Found")
         except Exception as _e:
             print(_e)
         return None

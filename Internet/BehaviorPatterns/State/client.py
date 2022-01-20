@@ -7,11 +7,7 @@ class Context:
 
     def __init__(self):
 
-        self.state_handles = [
-            Started(),
-            Running(),
-            Finished()
-        ]
+        self.state_handles = [Started(), Running(), Finished()]
         self._handle = iter(self.state_handles)
 
     def request(self):

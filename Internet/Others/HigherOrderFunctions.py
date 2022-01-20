@@ -1,20 +1,11 @@
 from typing import Union
 
 
-def selection(
-    *,
-    _operation: str
-) -> Union[int, str]:
-    def _sum(
-        num_one: int,
-        num_two: int
-    ) -> int:
+def selection(*, _operation: str) -> Union[int, str]:
+    def _sum(num_one: int, num_two: int) -> int:
         return num_one + num_two
 
-    def multiplication(
-        num_one: int,
-        num_two: int
-    ) -> int:
+    def multiplication(num_one: int, num_two: int) -> int:
         return num_one * num_two
 
     if _operation == "sum":
@@ -25,13 +16,11 @@ def selection(
         raise Exception("Invalid operation")
 
 
-def double_number(
-    number: int
-) -> int:
+def double_number(number: int) -> int:
     return number * 2
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Owner use
     operation = selection(_operation="multiplication")
     print(operation(12, 12))

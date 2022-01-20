@@ -18,12 +18,16 @@ class CartVisitor(Visitor):
     def visit(self, item: Item) -> float:
         if isinstance(item, Book):
             cost = item.get_price()
-            print(f'Book  -> Genre: "{item.get_genre()}", Cost: ${item.get_price()}')
+            print(
+                f'Book  -> Genre: "{item.get_genre()}", Cost: ${item.get_price()}'
+            )
             return cost
 
         elif isinstance(item, Shirt):
             cost = item.get_price()
-            print(f'Shirt -> Size: "{item.get_size()}", Cost: ${item.get_price()}')
+            print(
+                f'Shirt -> Size: "{item.get_size()}", Cost: ${item.get_price()}'
+            )
             return cost
 
 

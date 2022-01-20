@@ -9,8 +9,11 @@ class File(IComponent):
         self.name = name
 
     def dir(self, indent):
-        parent_id = (id(self.reference_to_parent)
-                     if self.reference_to_parent is not None else None)
+        parent_id = (
+            id(self.reference_to_parent)
+            if self.reference_to_parent is not None
+            else None
+        )
         print(
             f"{indent}<FILE> {self.name}\t\t"
             f"id:{id(self)}\tParent:\t{parent_id}"

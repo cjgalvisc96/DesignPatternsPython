@@ -1,7 +1,7 @@
 from typing import Callable
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     power: Callable[[int], int] = lambda x: x ** 2
     print(power(3))
 

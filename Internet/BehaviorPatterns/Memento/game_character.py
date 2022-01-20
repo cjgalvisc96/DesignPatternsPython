@@ -33,7 +33,7 @@ class GameCharacter:
         self._location["z"] += amount
 
     def __str__(self):
-        return(
+        return (
             f"Score: {self._score}, "
             f"Level: {self._level}, "
             f"Location: {self._location}\n"
@@ -47,7 +47,8 @@ class GameCharacter:
             self._score,
             self._inventory.copy(),
             self._level,
-            self._location.copy())
+            self._location.copy(),
+        )
 
     @memento.setter
     def memento(self, memento):

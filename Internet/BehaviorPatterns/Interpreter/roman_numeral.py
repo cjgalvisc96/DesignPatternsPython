@@ -23,6 +23,7 @@ class RomanNumeral(AbstractExpression):
 
 class RomanNumeral1(RomanNumeral):
     """Roman Numerals 1 - 9"""
+
     one = "I"
     four = "IV"
     five = "V"
@@ -37,18 +38,18 @@ class RomanNumeral1(RomanNumeral):
         if not context[0]:
             return Number(context[1]).interpret()
 
-        if context[0][0: 2] == cls.nine:
-            context[1] += (9 * cls.multiplier)
+        if context[0][0:2] == cls.nine:
+            context[1] += 9 * cls.multiplier
             context[0] = context[0][2:]
         elif context[0][0] == cls.five:
-            context[1] += (5 * cls.multiplier)
+            context[1] += 5 * cls.multiplier
             context[0] = context[0][1:]
-        elif context[0][0: 2] == cls.four:
-            context[1] += + (4 * cls.multiplier)
+        elif context[0][0:2] == cls.four:
+            context[1] += +(4 * cls.multiplier)
             context[0] = context[0][2:]
 
         while context[0] and context[0][0] == cls.one:
-            context[1] += (1 * cls.multiplier)
+            context[1] += 1 * cls.multiplier
             context[0] = context[0][1:]
 
         return Number(context[1]).interpret()
@@ -56,6 +57,7 @@ class RomanNumeral1(RomanNumeral):
 
 class RomanNumeral10(RomanNumeral1):
     """Roman Numerals 10 - 99"""
+
     one = "X"
     four = "XL"
     five = "L"
@@ -65,6 +67,7 @@ class RomanNumeral10(RomanNumeral1):
 
 class RomanNumeral100(RomanNumeral1):
     """Roman Numerals 100 - 999"""
+
     one = "C"
     four = "CD"
     five = "D"
@@ -74,6 +77,7 @@ class RomanNumeral100(RomanNumeral1):
 
 class RomanNumeral1000(RomanNumeral1):
     """Roman Numerals 1000 - 3999"""
+
     one = "M"
     four = ""
     five = ""

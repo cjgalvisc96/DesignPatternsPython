@@ -5,6 +5,7 @@ from abc import ABCMeta, abstractmethod
 
 class IGame(metaclass=ABCMeta):
     """A Game Interface"""
+
     @staticmethod
     @abstractmethod
     def add_winner(position, name):

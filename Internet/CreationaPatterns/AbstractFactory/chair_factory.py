@@ -12,13 +12,13 @@ class ChairFactory:
     def get_chair(chair):
         """A static method to get a chair"""
         try:
-            if chair == 'BigChair':
+            if chair == "BigChair":
                 return BigChair()
-            if chair == 'MediumChair':
+            if chair == "MediumChair":
                 return MediumChair()
-            if chair == 'SmallChair':
+            if chair == "SmallChair":
                 return SmallChair()
-            raise Exception('Chair Not Found')
+            raise Exception("Chair Not Found")
         except Exception as _e:
             print(_e)
         return None

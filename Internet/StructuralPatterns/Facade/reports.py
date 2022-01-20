@@ -5,6 +5,7 @@ from typing import Dict, Tuple
 
 class Reports:
     """A Singleton Dictionary of Reported Events"""
+
     _reports: Dict[int, Tuple[float, str]] = {}
     _row_id = 0
 

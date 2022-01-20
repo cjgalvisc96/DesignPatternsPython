@@ -11,7 +11,7 @@ class Document(IProtoType):
         self.list = l
 
     def clone(self, mode):
-        """ This clone method uses different copy techniques """
+        """This clone method uses different copy techniques"""
         if mode == 1:
             # results in a 1 level shallow copy of the Document
             doc_list = self.list
@@ -27,9 +27,9 @@ class Document(IProtoType):
 
         return type(self)(
             self.name,  # a shallow copy is returned of the name property
-            doc_list  # copy method decided by mode argument
+            doc_list,  # copy method decided by mode argument
         )
 
     def __str__(self):
-        """ Overriding the default __str__ method for our object."""
+        """Overriding the default __str__ method for our object."""
         return f"{id(self)}\tname={self.name}\tlist={self.list}"

@@ -4,6 +4,7 @@ from abc import ABCMeta, abstractmethod
 
 class IDispenser(metaclass=ABCMeta):
     """Methods to implement"""
+
     @staticmethod
     @abstractmethod
     def next_successor(successor):

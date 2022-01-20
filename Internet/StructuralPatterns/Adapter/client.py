@@ -18,7 +18,8 @@ while COUNTER < TOTALCUBES:
     if SUCCESS:
         print(
             f"Company A building Cube id:{id(CUBE)}, "
-            f"{CUBE.width}x{CUBE.height}x{CUBE.depth}")
+            f"{CUBE.width}x{CUBE.height}x{CUBE.depth}"
+        )
         COUNTER = COUNTER + 1
     else:  # try other manufacturer
         print("Company A is busy, trying company B")
@@ -27,7 +28,8 @@ while COUNTER < TOTALCUBES:
         if SUCCESS:
             print(
                 f"Company B building Cube id:{id(CUBE)}, "
-                f"{CUBE.width}x{CUBE.height}x{CUBE.depth}")
+                f"{CUBE.width}x{CUBE.height}x{CUBE.depth}"
+            )
             COUNTER = COUNTER + 1
         else:
             print("Company B is busy, trying company A")

@@ -8,7 +8,7 @@ USER_ID = GameAPI.register_user(USER)
 
 time.sleep(1)
 
-GameAPI.submit_entry(USER_ID, Decimal('5'))
+GameAPI.submit_entry(USER_ID, Decimal("5"))
 
 time.sleep(1)
 

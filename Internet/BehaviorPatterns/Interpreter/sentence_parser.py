@@ -28,24 +28,24 @@ class Parser:
 
             if not right.isdigit():
                 tree.append(RomanNumeral(tokens[0]))
-                if operator == '-':
+                if operator == "-":
                     tree.append(Subtract(left_expression, tree[-1]))
-                if operator == '+':
+                if operator == "+":
                     tree.append(Add(left_expression, tree[-1]))
             else:
                 right_expression = Number(right)
                 if not tree:
                     # Empty Data Structures return False by default
-                    if operator == '-':
+                    if operator == "-":
                         tree.append(
-                            Subtract(left_expression, right_expression))
-                    if operator == '+':
-                        tree.append(
-                            Add(left_expression, right_expression))
+                            Subtract(left_expression, right_expression)
+                        )
+                    if operator == "+":
+                        tree.append(Add(left_expression, right_expression))
                 else:
-                    if operator == '-':
+                    if operator == "-":
                         tree.append(Subtract(tree[-1], right_expression))
-                    if operator == '+':
+                    if operator == "+":
                         tree.append(Add(tree[-1], right_expression))
 
         return tree.pop()

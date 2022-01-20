@@ -11,10 +11,10 @@ class ChairFactory:
     @staticmethod
     def get_chair(chair):
         """A static method to get a chair"""
-        if chair == 'BigChair':
+        if chair == "BigChair":
             return BigChair()
-        if chair == 'MediumChair':
+        if chair == "MediumChair":
             return MediumChair()
-        if chair == 'SmallChair':
+        if chair == "SmallChair":
             return SmallChair()
         return None

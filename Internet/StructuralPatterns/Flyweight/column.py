@@ -18,7 +18,7 @@ class Column:
 
     def get_data(self):
         """Get the flyweight value from the factory,
-         and apply the extrinsic values"""
+        and apply the extrinsic values"""
         ret = ""
         for data in self.data:
             ret = ret + FlyweightFactory.get_flyweight(data).code

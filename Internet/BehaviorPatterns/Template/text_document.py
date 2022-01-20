@@ -4,6 +4,7 @@ from abstract_document import AbstractDocument
 
 class TextDocument(AbstractDocument):
     """Prints out a text document"""
+
     @staticmethod
     def title(document):
         document["title"] = "New Text Document"

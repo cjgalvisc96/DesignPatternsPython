@@ -3,6 +3,7 @@
 
 class Leaderboard:
     """The Leaderboard as a Singleton"""
+
     _table = {}
 
     def __new__(cls):

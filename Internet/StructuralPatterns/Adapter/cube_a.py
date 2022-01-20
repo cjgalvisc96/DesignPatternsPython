@@ -5,6 +5,7 @@ from interface_cube_a import ICubeA
 
 class CubeA(ICubeA):
     """A hypothetical Cube tool from company A"""
+
     # a static variable indicating the last time a cube was manufactured
     last_time = int(time.time())
 

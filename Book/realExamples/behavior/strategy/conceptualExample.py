@@ -16,7 +16,9 @@ class Context:
         self._strategy = strategy
 
     def do_some_bussiness_logic(self) -> None:
-        print("Context: sorting data using the strategy (not sure how it'll do it)")
+        print(
+            "Context: sorting data using the strategy (not sure how it'll do it)"
+        )
         result = self._strategy.do_algorithm(data=["a", "b", "c", "d", "e"])
         print(",".join(result))
 
@@ -24,9 +26,7 @@ class Context:
 class Strategy(ABC):
     @abstractmethod
     def do_algorithm(
-        self,
-        *,
-        data: List[str]
+        self, *, data: List[str]
     ) -> Optional[NotImplementedError]:
         raise NotImplementedError()
 

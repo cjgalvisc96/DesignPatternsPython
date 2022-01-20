@@ -6,6 +6,7 @@ from reports import Reports
 
 class Wallets:
     """A Singleton Dictionary of User Wallets"""
+
     _wallets: Dict[str, Decimal] = {}
 
     def __new__(cls):
@@ -15,9 +16,8 @@ class Wallets:
     def create_wallet(cls, user_id: str) -> bool:
         """A method to initialize a users wallet"""
         if user_id not in cls._wallets:
-            cls._wallets[user_id] = Decimal('0')
-            Reports.log_event(
-                f"wallet for `{user_id}` created and set to 0")
+            cls._wallets[user_id] = Decimal("0")
+            Reports.log_event(f"wallet for `{user_id}` created and set to 0")
             return True
         return False
 
@@ -25,7 +25,8 @@ class Wallets:
     def get_balance(cls, user_id: str) -> Decimal:
         """A method to check a users balance"""
         Reports.log_event(
-            f"Balance check for `{user_id}` = {cls._wallets[user_id]}")
+            f"Balance check for `{user_id}` = {cls._wallets[user_id]}"
+        )
         return cls._wallets[user_id]
 
     @classmethod

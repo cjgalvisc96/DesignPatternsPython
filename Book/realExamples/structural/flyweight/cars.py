@@ -9,7 +9,10 @@ class Flyweight:
     def operation(self, *, unique_state: List) -> None:
         shared = json.dumps(self._shared_state)
         unique = json.dumps(unique_state)
-        print(f"Flyweight: Displaying shared ({shared}) and unique ({unique}) states.", end="")
+        print(
+            f"Flyweight: Displaying shared ({shared}) and unique ({unique}) states.",
+            end="",
+        )
 
 
 class FlyweightFactory:
@@ -17,7 +20,9 @@ class FlyweightFactory:
 
     def __init__(self, *, initial_flyweights: List) -> None:
         for state in initial_flyweights:
-            self._flyweights[self.get_key(state=state)] = Flyweight(shared_state=state)
+            self._flyweights[self.get_key(state=state)] = Flyweight(
+                shared_state=state
+            )
 
     def get_key(self, *, state: List) -> str:
         return "_".join(sorted(state))
@@ -25,7 +30,9 @@ class FlyweightFactory:
     def get_flyweight(self, *, shared_state: List) -> Flyweight:
         key = self.get_key(state=shared_state)
         if not self._flyweights.get(key):
-            print("FlyweightFactory: Cannot find a flyweight, creating a new one.")
+            print(
+                "FlyweightFactory: Cannot find a flyweight, creating a new one."
+            )
             self._flyweights[key] = Flyweight(shared_state=shared_state)
         else:
             print("FlyweightFactory: Reusing existing flyweight")
@@ -37,7 +44,9 @@ class FlyweightFactory:
         print("\n".join(map(str, self._flyweights.keys())), end="")
 
 
-def add_car_to_police_database(factory: FlyweightFactory, car_specifications: Dict) -> None:
+def add_car_to_police_database(
+    factory: FlyweightFactory, car_specifications: Dict
+) -> None:
     print("\n\nClient: Adding a car to database.")
     flyweight = factory.get_flyweight(
         shared_state=[
@@ -46,7 +55,12 @@ def add_car_to_police_database(factory: FlyweightFactory, car_specifications: Di
             car_specifications["color"],
         ]
     )
-    flyweight.operation(unique_state=[car_specifications["plates"], car_specifications["owner"]])
+    flyweight.operation(
+        unique_state=[
+            car_specifications["plates"],
+            car_specifications["owner"],
+        ]
+    )
 
 
 if __name__ == "__main__":

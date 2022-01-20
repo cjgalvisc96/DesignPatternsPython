@@ -4,6 +4,7 @@ from abc import ABCMeta, abstractmethod
 
 class IProtoType(metaclass=ABCMeta):
     """interface with clone method"""
+
     @staticmethod
     @abstractmethod
     def clone(mode):

@@ -39,7 +39,9 @@ class IRideFactory:
 
 class Car(IRideFactory):
     @staticmethod
-    def get_ride(*, category: str) -> Union[CarPremiumRide, CarDeluxeRide, Exception]:
+    def get_ride(
+        *, category: str
+    ) -> Union[CarPremiumRide, CarDeluxeRide, Exception]:
         if category == "premium":
             return CarPremiumRide()
         if category == "delux":
@@ -49,7 +51,9 @@ class Car(IRideFactory):
 
 class Bike(IRideFactory):
     @staticmethod
-    def get_ride(*, category: str) -> Union[BikePremiumRide, BikeDeluxeRide, Exception]:
+    def get_ride(
+        *, category: str
+    ) -> Union[BikePremiumRide, BikeDeluxeRide, Exception]:
         if category == "premium":
             return BikePremiumRide()
         if category == "deluxe":
@@ -59,7 +63,9 @@ class Bike(IRideFactory):
 
 class TransportFactory:
     @staticmethod
-    def get_transport(*, _type: str, category: str) -> Union[Car, Bike, Exception]:
+    def get_transport(
+        *, _type: str, category: str
+    ) -> Union[Car, Bike, Exception]:
         if _type == "car":
             return Car().get_ride(category=category)
         if _type == "bike":

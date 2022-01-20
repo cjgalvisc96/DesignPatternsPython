@@ -46,6 +46,10 @@ class SMSCommand(BaseCommand):
 if __name__ == "__main__":
     invoker = NotificationInvoker()
     sender = NotificationService()
-    invoker.invoke(command=EmailCommand(receiver=sender, data={"subject": "Test Email"}))
-    invoker.invoke(command=SMSCommand(receiver=sender, data={"subject": "Test SMS"}))
+    invoker.invoke(
+        command=EmailCommand(receiver=sender, data={"subject": "Test Email"})
+    )
+    invoker.invoke(
+        command=SMSCommand(receiver=sender, data={"subject": "Test SMS"})
+    )
     print(invoker.notification_history)

@@ -14,5 +14,5 @@ class MediumTable(ITable):
         return {
             "width": self._width,
             "depth": self._depth,
-            "height": self._height
+            "height": self._height,
         }

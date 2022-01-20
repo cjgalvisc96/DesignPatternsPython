@@ -13,7 +13,8 @@ class Folder(IComponent):
     def dir(self, indent=""):
         print(
             f"{indent}<DIR>  {self.name}\t\tid:{id(self)}\t"
-            f"Components: {len(self.components)}")
+            f"Components: {len(self.components)}"
+        )
         for component in self.components:
             component.dir(indent + "..")
 

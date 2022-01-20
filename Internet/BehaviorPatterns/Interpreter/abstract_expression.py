@@ -6,6 +6,7 @@ class AbstractExpression:
     All Terminal and Non-Terminal expressions will implement an
     `interpret` method
     """
+
     @staticmethod
     def interpret():
         """

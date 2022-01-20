@@ -14,5 +14,5 @@ class BigChair(IChair):
         return {
             "width": self._width,
             "depth": self._depth,
-            "height": self._height
+            "height": self._height,
         }

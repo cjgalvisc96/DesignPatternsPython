@@ -34,7 +34,9 @@ class ParentDepartment(IDepartment):
         self.base_employees = employees
         self.sub_deparments = list()
 
-    def add_deparment(self, *, department: Union[Accounting, Development]) -> None:
+    def add_deparment(
+        self, *, department: Union[Accounting, Development]
+    ) -> None:
         self.sub_deparments.append(department)
         self.employees += department.employees
 

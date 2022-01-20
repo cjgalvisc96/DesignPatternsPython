@@ -18,7 +18,9 @@ class PersonSinglenton(IPerson):
 
     def __init__(self, *, name: str, age: int) -> None:
         if PersonSinglenton.__instance is not None:
-            raise Exception("Singlenton cannot be instantiated more than once!")
+            raise Exception(
+                "Singlenton cannot be instantiated more than once!"
+            )
         self.name = name
         self.age = age
         PersonSinglenton.__instance = self

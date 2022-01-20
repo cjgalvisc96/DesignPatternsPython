@@ -4,6 +4,7 @@ from abc import ABCMeta, abstractmethod
 
 class IDataController(metaclass=ABCMeta):
     """A Subject Interface"""
+
     @staticmethod
     @abstractmethod
     def subscribe(observer):

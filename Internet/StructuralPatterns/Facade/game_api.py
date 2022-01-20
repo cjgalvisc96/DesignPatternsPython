@@ -9,6 +9,7 @@ from reports import Reports
 
 class GameAPI:
     """The Game API facade"""
+
     @staticmethod
     def get_balance(user_id: str) -> Decimal:
         """Get a players balance"""

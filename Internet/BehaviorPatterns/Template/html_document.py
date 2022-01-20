@@ -4,6 +4,7 @@ from abstract_document import AbstractDocument
 
 class HTMLDocument(AbstractDocument):
     """Prints out a HTML formatted document"""
+
     @staticmethod
     def title(document):
         document["title"] = "New HTML Document"
@@ -25,15 +26,12 @@ class HTMLDocument(AbstractDocument):
         for attribute in document:
             if attribute in ["title", "description", "author"]:
                 print(
-                    f"    <{attribute}>{document[attribute]}"
-                    f"</{attribute}>"
+                    f"    <{attribute}>{document[attribute]}" f"</{attribute}>"
                 )
             if attribute == "background_colour":
                 print("    <style>")
                 print("      body {")
-                print(
-                    f"        background-color: "
-                    f"{document[attribute]};")
+                print(f"        background-color: " f"{document[attribute]};")
                 print("      }")
                 print("    </style>")
         print("  </head>")

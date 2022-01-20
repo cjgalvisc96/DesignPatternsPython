@@ -26,7 +26,10 @@ class Creator(ABC):
 
     def some_operation(self) -> str:
         product = self.factory_method()
-        result = f"Creator: The same creator´s code has just worked with" f"{product.operation()}"
+        result = (
+            f"Creator: The same creator´s code has just worked with"
+            f"{product.operation()}"
+        )
         return result
 
 

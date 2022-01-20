@@ -16,7 +16,7 @@ class CubeBAdapter(ICubeA):
         self.depth = depth
 
         success = self.cube.create(
-            [0-width/2, 0-height/2, 0-depth/2],
-            [0+width/2, 0+height/2, 0+depth/2]
+            [0 - width / 2, 0 - height / 2, 0 - depth / 2],
+            [0 + width / 2, 0 + height / 2, 0 + depth / 2],
         )
         return success

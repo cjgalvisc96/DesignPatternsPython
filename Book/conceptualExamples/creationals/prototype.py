@@ -39,3 +39,30 @@ class SomeComponent:
         )
         new.__dict__ = copy.deepcopy(self.__dict__, memo)
         return new
+
+
+if __name__ == "__main__":
+    list_of_objects = [1, {1, 2, 4}, [1, 2, 3]]
+    circular_ref = SelfReferecingEntity()
+    component = SomeComponent(
+        some_int=23,
+        some_list_of_objects=list_of_objects,
+        some_circular_ref=circular_ref,
+    )
+
+    shallow_copied_component = copy.copy(component)
+
+    name_another_object = "Another object"
+    shallow_copied_component.some_list_of_objects.append(name_another_object)
+    if component.some_list_of_objects[-1] == name_another_object:
+        print(
+            "Adding elements to `shallow_copied_component`'s"
+            "some_list_of_objects adds it to `component`'s"
+            "some_list_of_objects."
+        )
+    else:
+        print(
+            "Adding elements to `shallow_copied_component`'s"
+            "some_list_of_objects doesn't adds it to `component`'s"
+            "some_list_of_objects."
+        )

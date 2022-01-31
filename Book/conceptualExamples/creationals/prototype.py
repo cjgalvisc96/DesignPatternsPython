@@ -44,7 +44,11 @@ class SomeComponent:
 if __name__ == "__main__":
     list_of_objects = [1, {1, 2, 3}, [1, 2, 3]]
     circular_ref = SelfReferecingEntity()
-    component = SomeComponent(some_int=23, some_list_of_objects=list_of_objects, some_circular_ref=circular_ref)
+    component = SomeComponent(
+        some_int=23,
+        some_list_of_objects=list_of_objects,
+        some_circular_ref=circular_ref,
+    )
     circular_ref.set_parent(parent=component)
 
     shallow_copied_component = copy.copy(component)
@@ -125,4 +129,3 @@ if __name__ == "__main__":
         "^^ This shows that deepcopied objects contain same reference, they "
         "are not cloned repeatedly."
     )
-
